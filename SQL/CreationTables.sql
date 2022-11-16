@@ -43,3 +43,11 @@ CREATE TABLE lien_chapitre(
 	FOREIGN KEY (no_chapitre_origine) REFERENCES chapitre(id),
 	FOREIGN KEY (no_chapitre_destination) REFERENCES chapitre(id)
 );
+
+CREATE TABLE sauvegarde(
+id INT PRIMARY KEY AUTO_INCREMENT,
+no_chapitre INT,
+feuille_aventure INT,
+FOREIGN KEY (no_chapitre) REFERENCES chapitre(id),
+FOREIGN KEY (feuille_aventure) REFERENCES feuille_aventure(id)
+);
