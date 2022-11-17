@@ -1,16 +1,18 @@
-CREATE TABLE discipline_kai(
+CREATE DATABASE IF NOT EXISTS merlive;
+
+CREATE TABLE IF NOT EXISTS discipline_kai(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nom VARCHAR(255),
 	notes VARCHAR(255)
 );
 
-CREATE TABLE arme(
+CREATE TABLE IF NOT EXISTS arme(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nom VARCHAR(255),
 	notes VARCHAR(255)
 );
 
-CREATE TABLE sac_dos(
+CREATE TABLE IF NOT EXISTS sac_dos(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	type_objet ENUM('objet','objet_special','bourse','repas'),
 	nombre_objet INT,
@@ -18,7 +20,7 @@ CREATE TABLE sac_dos(
 	notes_bas VARCHAR(255)
 );
 
-CREATE TABLE feuille_aventure(
+CREATE TABLE IF NOT EXISTS feuille_aventure(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	id_discipline_kai INT,
 	id_arme INT,
@@ -30,13 +32,13 @@ CREATE TABLE feuille_aventure(
 	FOREIGN KEY (id_sac_dos) REFERENCES sac_dos(id)
 );
 
-CREATE TABLE chapitre(
+CREATE TABLE IF NOT EXISTS chapitre(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	no_chapitre INT,
 	texte VARCHAR(255)
 );
 
-CREATE TABLE lien_chapitre(
+CREATE TABLE IF NOT EXISTS lien_chapitre(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	no_chapitre_origine INT,
 	no_chapitre_destination INT,
@@ -44,7 +46,7 @@ CREATE TABLE lien_chapitre(
 	FOREIGN KEY (no_chapitre_destination) REFERENCES chapitre(id)
 );
 
-CREATE TABLE sauvegarde(
+CREATE TABLE IF NOT EXISTS sauvegarde(
 id INT PRIMARY KEY AUTO_INCREMENT,
 no_chapitre INT,
 feuille_aventure INT,
