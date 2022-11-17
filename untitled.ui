@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1110</width>
+    <height>968</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>120</y>
+      <x>580</x>
+      <y>270</y>
       <width>131</width>
       <height>41</height>
      </rect>
@@ -30,7 +30,7 @@
    <widget class="QScrollArea" name="chapitre">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>480</x>
       <y>50</y>
       <width>261</width>
       <height>51</height>
@@ -48,24 +48,11 @@
        <height>49</height>
       </rect>
      </property>
-     <widget class="QLineEdit" name="LineEditChapitre">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>10</y>
-        <width>61</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="buttonChapitre">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>10</y>
+        <x>160</x>
+        <y>20</y>
         <width>75</width>
         <height>23</height>
        </rect>
@@ -87,13 +74,26 @@
        <string>Chapitre:</string>
       </property>
      </widget>
+     <widget class="QSpinBox" name="chapitreNum">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>20</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>148</number>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>210</y>
+      <x>540</x>
+      <y>290</y>
       <width>131</width>
       <height>31</height>
      </rect>
@@ -105,7 +105,7 @@
    <widget class="QScrollArea" name="sauvegarde">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>910</x>
       <y>0</y>
       <width>181</width>
       <height>51</height>
@@ -123,19 +123,6 @@
        <height>49</height>
       </rect>
      </property>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>71</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Sauvegarde</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="buttonSauvegarde">
       <property name="geometry">
        <rect>
@@ -149,12 +136,25 @@
        <string>sauvegarde</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sauvegarde</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QScrollArea" name="chapitre_2">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>480</x>
       <y>0</y>
       <width>431</width>
       <height>51</height>
@@ -218,7 +218,7 @@
    <widget class="QScrollArea" name="chapitre_3">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>740</x>
       <y>50</y>
       <width>351</width>
       <height>51</height>
@@ -254,7 +254,7 @@
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>111</width>
+        <width>131</width>
         <height>31</height>
        </rect>
       </property>
@@ -277,8 +277,8 @@
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>310</y>
+      <x>510</x>
+      <y>350</y>
       <width>31</width>
       <height>21</height>
      </rect>
@@ -287,18 +287,198 @@
      <string>armes</string>
     </property>
    </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>50</y>
+      <width>481</width>
+      <height>861</height>
+     </rect>
+    </property>
+    <property name="plainText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>481</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_5">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>479</width>
+       <height>49</height>
+      </rect>
+     </property>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>0</y>
+        <width>61</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Chapitre</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QScrollArea" name="chapitre_4">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>100</y>
+      <width>381</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_6">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>379</width>
+       <height>49</height>
+      </rect>
+     </property>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Se rendre au prochain chapitre</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="buttonProchainChapitre">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>10</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>GO</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="ProchainComboBox">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>10</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+     </widget>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>21</height>
+     <width>1110</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonChapitre</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>GoChapitre()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>696</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1030</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chapitreNum</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>chapitreNum</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>584</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>584</x>
+     <y>104</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonProchainChapitre</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ProchainChapitre()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>685</x>
+     <y>146</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1044</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>test()</signal>
+  <slot>GoChapitre()</slot>
+  <slot>ProchainChapitre()</slot>
+ </slots>
 </ui>
