@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1207</width>
-    <height>750</height>
+    <height>735</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -379,32 +379,32 @@
         </property>
         <item>
          <property name="text">
-          <string>Le camouflage</string>
+          <string>le camouflage</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>La Chasse</string>
+          <string>la chasse</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Le sixieme sens</string>
+          <string>le sixieme sens</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Orientation</string>
+          <string>orientation</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Guerision</string>
+          <string>guerison</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Maitre des armes</string>
+          <string>maitre des armes</string>
          </property>
         </item>
        </widget>
@@ -419,32 +419,32 @@
         </property>
         <item>
          <property name="text">
-          <string>Le camouflage</string>
+          <string>le camouflage</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>La Chasse</string>
+          <string>la chasse</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Le sixieme sens</string>
+          <string>le sixieme sens</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Orientation</string>
+          <string>orientation</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Guerision</string>
+          <string>guerison</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Maitre des armes</string>
+          <string>maitre des armes</string>
          </property>
         </item>
        </widget>
@@ -459,32 +459,32 @@
         </property>
         <item>
          <property name="text">
-          <string>Le camouflage</string>
+          <string>le camouflage</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>La Chasse</string>
+          <string>la Chasse</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Le sixieme sens</string>
+          <string>le sixieme sens</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Orientation</string>
+          <string>orientation</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Guerision</string>
+          <string>guerison</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Maitre des armes</string>
+          <string>maitre des armes</string>
          </property>
         </item>
        </widget>
@@ -499,32 +499,32 @@
         </property>
         <item>
          <property name="text">
-          <string>Le camouflage</string>
+          <string>le camouflage</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>La Chasse</string>
+          <string>la chasse</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Le sixieme sens</string>
+          <string>le sixieme sens</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Orientation</string>
+          <string>orientation</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Guerision</string>
+          <string>guerison</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Maitre des armes</string>
+          <string>maitre des armes</string>
          </property>
         </item>
        </widget>
@@ -539,32 +539,32 @@
         </property>
         <item>
          <property name="text">
-          <string>Le camouflage</string>
+          <string>le camouflage</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>La Chasse</string>
+          <string>la chasse</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Le sixieme sens</string>
+          <string>le sixieme sens</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Orientation</string>
+          <string>orientation</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Guerision</string>
+          <string>guerison</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Maitre des armes</string>
+          <string>maitre des armes</string>
          </property>
         </item>
        </widget>
@@ -645,7 +645,7 @@
        <string>changer</string>
       </property>
      </widget>
-     <widget class="QTextEdit" name="textEditBourse">
+     <widget class="QPlainTextEdit" name="plainTextEditBoursesweesfd">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -717,12 +717,12 @@
        <string>changer</string>
       </property>
      </widget>
-     <widget class="QTextEdit" name="textEditHabilete">
+     <widget class="QPlainTextEdit" name="plainTextEditHabilete">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>50</y>
-        <width>61</width>
+        <width>51</width>
         <height>31</height>
        </rect>
       </property>
@@ -789,12 +789,12 @@
        <string>changer</string>
       </property>
      </widget>
-     <widget class="QTextEdit" name="textEditEndurance">
+     <widget class="QPlainTextEdit" name="plainTextEditEndurance">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>50</y>
-        <width>61</width>
+        <width>51</width>
         <height>31</height>
        </rect>
       </property>
@@ -1114,7 +1114,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>1127</x>
-     <y>749</y>
+     <y>734</y>
     </hint>
    </hints>
   </connection>
@@ -1161,7 +1161,7 @@
      <y>287</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1232</x>
+     <x>1206</x>
      <y>379</y>
     </hint>
    </hints>
