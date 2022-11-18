@@ -53,7 +53,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 		mycursor = mydb.cursor()
 
 		# Dans notre requête on remplace tous les paramêtres par des %s
-		requete = "SELECT texte  FROM chapitre WHERE no_chapitre = %s limit 2,1"
+		requete = "SELECT texte  FROM chapitre WHERE no_chapitre = %s"
 		# Ensuite on crée un tuple avec les valeurs des paramêtres
 		parametres = (self.chapitreNum.value(),)
 		
@@ -73,42 +73,203 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 		
 		
 	def AjoutArmes(self):
+		mycursor2 = mydb.cursor()
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete2 = "SELECT id  FROM arme WHERE  nom = %s"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres2 = (self.plainTextEditAjoutArmes.toPlainText(),)
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor2.execute(requete2, parametres2)
+
+		# Le curseur récupère toutes les données du résultat de la requête
+		myresult2 = mycursor2.fetchall()
+		id = str(myresult2)
+		
+		variable = id.replace('[', '').replace(']', '').replace('"', '').replace('(', "").replace(')', "").replace("'", "").replace(",", "")
+		
+		mycursor2.close()
+		
 		mycursor = mydb.cursor()
 		nom = self.plainTextEditAjoutArmes.toPlainText()
 		
-		mycursor = mydb.cursor()
 
 		# Dans notre requête on remplace tous les paramêtres par des %s
-		requete = "INSERT INTO arme (nom) values (%s)"
+		requete = "INSERT INTO lien_arme (id_feuille_aventure, id_arme) values (1, %s)"
 		# Ensuite on crée un tuple avec les valeurs des paramêtres
-		parametres = (str(nom),)
-		
-		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
-		if mycursor.execute(requete, parametres):
-			print("fonctionne")
-		mycursor.close()
-		
-	def AjoutObjet(self):
-		mycursor = mydb.cursor()
-		nom = self.plainTextEditAjoutObjet.toPlainText()
-		
-		mycursor = mydb.cursor()
-
-		# Dans notre requête on remplace tous les paramêtres par des %s
-		requete = "INSERT INTO objet (nom_objet) values (%s)"
-		# Ensuite on crée un tuple avec les valeurs des paramêtres
-		parametres = (nom,)
+		parametres = (int(variable),)
 		
 		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
 		mycursor.execute(requete, parametres)
+		mydb.commit()
+		mycursor.close()
+		
+	def AjoutObjet(self):
+		mycursor2 = mydb.cursor()
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete2 = "SELECT id  FROM objet WHERE  nom = %s"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres2 = (self.plainTextEditAjoutObjet.toPlainText(),)
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor2.execute(requete2, parametres2)
+
+		# Le curseur récupère toutes les données du résultat de la requête
+		myresult2 = mycursor2.fetchall()
+		id = str(myresult2)
+		
+		variable = id.replace('[', '').replace(']', '').replace('"', '').replace('(', "").replace(')', "").replace("'", "").replace(",", "")
+		
+		mycursor2.close()
+		
+		mycursor = mydb.cursor()
+		nom = self.plainTextEditAjoutObjet.toPlainText()
+		
+
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete = "INSERT INTO lien_objet (id_feuille_aventure, id_objet) values (1, %s)"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres = (int(variable),)
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor.execute(requete, parametres)
+		mydb.commit()
 		mycursor.close()
 	
 	def FeuilleAventure(self):
-	print("60")
+		discipline1 = self.comboBoxDiscipline1.currentText()
+		discipline2 = self.comboBoxDiscipline2.currentText()
+		discipline3 = self.comboBoxDiscipline3.currentText()
+		discipline4 = self.comboBoxDiscipline4.currentText()
+		discipline5 = self.comboBoxDiscipline5.currentText()
+		
+		parametres1 = (discipline1,)
+		parametres2 = (discipline2,)
+		parametres3 = (discipline3,)
+		parametres4 = (discipline4,)
+		parametres5 = (discipline5,)
+		
+		mycursor = mydb.cursor()
+
+		requete = "SELECT id  FROM discipline_kai WHERE  nom = %s"
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor.execute(requete, parametres1)
+
+		# Le curseur récupère toutes les données du résultat de la requête
+		myresult = mycursor.fetchall()
+		id = str(myresult)
+		
+		variable1 = id.replace('[', '').replace(']', '').replace('"', '').replace('(', "").replace(')', "").replace("'", "").replace(",", "")
+		
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete6 = "INSERT INTO lien_discipline_kai (id_feuille_aventure, id_discipline_kai) values (1, %s)"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres6 = (int(variable1),)
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor.execute(requete6, parametres6)
+		mydb.commit()
+		
+		mycursor.close()
+
+		mycursor2 = mydb.cursor()
+		requete2 = "SELECT id  FROM discipline_kai WHERE  nom = %s"
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor2.execute(requete2, parametres2)
+
+		# Le curseur récupère toutes les données du résultat de la requête
+		myresult2 = mycursor2.fetchall()
+		id = str(myresult2)
+		
+		variable2 = id.replace('[', '').replace(']', '').replace('"', '').replace('(', "").replace(')', "").replace("'", "").replace(",", "")
+		
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete7 = "INSERT INTO lien_discipline_kai (id_feuille_aventure, id_discipline_kai) values (1, %s)"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres7 = (int(variable2),)
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor2.execute(requete7, parametres7)
+		mydb.commit()
+		
+		mycursor2.close()
+		
+		mycursor3 = mydb.cursor()
+		requete3 = "SELECT id  FROM discipline_kai WHERE  nom = %s"
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor3.execute(requete3, parametres3)
+
+		# Le curseur récupère toutes les données du résultat de la requête
+		myresult3 = mycursor3.fetchall()
+		id = str(myresult3)
+		
+		variable3 = id.replace('[', '').replace(']', '').replace('"', '').replace('(', "").replace(')', "").replace("'", "").replace(",", "")
+		
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete8 = "INSERT INTO lien_discipline_kai (id_feuille_aventure, id_discipline_kai) values (1, %s)"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres8 = (int(variable3),)
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor3.execute(requete8, parametres8)
+		mydb.commit()
+		
+		mycursor3.close()
+		
+		mycursor4 = mydb.cursor()
+		requete4 = "SELECT id  FROM discipline_kai WHERE  nom = %s"
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor4.execute(requete4, parametres4)
+
+		# Le curseur récupère toutes les données du résultat de la requête
+		myresult4 = mycursor4.fetchall()
+		id = str(myresult4)
+		
+		variable4 = id.replace('[', '').replace(']', '').replace('"', '').replace('(', "").replace(')', "").replace("'", "").replace(",", "")
+		
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete9 = "INSERT INTO lien_discipline_kai (id_feuille_aventure, id_discipline_kai) values (1, %s)"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres9 = (int(variable4),)
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor4.execute(requete9, parametres9)
+		mydb.commit()
+		
+		mycursor4.close()
+		
+		mycursor5 = mydb.cursor()
+		requete5 = "SELECT id  FROM discipline_kai WHERE  nom = %s"
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor5.execute(requete5, parametres5)
+
+		# Le curseur récupère toutes les données du résultat de la requête
+		myresult5 = mycursor5.fetchall()
+		id = str(myresult5)
+		
+		variable5 = id.replace('[', '').replace(']', '').replace('"', '').replace('(', "").replace(')', "").replace("'", "").replace(",", "")
+		
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete10 = "INSERT INTO lien_discipline_kai (id_feuille_aventure, id_discipline_kai) values (1, %s)"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres10 = (int(variable5),)
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor5.execute(requete10, parametres10)
+		mydb.commit()
+		
+		mycursor5.close()
+		
+		
 	def ModifBourse(self):
 		mycursor = mydb.cursor()
-		bourse = self.plainTextEditBourse.toPlainText()
-		
+		bourse = self.plainTextEditBoursesweesfd.toPlainText()
+		self.Bourse.setText(str(bourse))
 		mycursor = mydb.cursor()
 
 		# Dans notre requête on remplace tous les paramêtres par des %s
@@ -118,12 +279,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 		
 		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
 		mycursor.execute(requete, parametres)
+		mydb.commit()
 		mycursor.close()
+		
 	
 	def ModifEndurance(self):
 		mycursor = mydb.cursor()
 		endurance = self.plainTextEditEndurance.toPlainText()
-		
+		self.Endurance.setText(str(endurance))
 		mycursor = mydb.cursor()
 
 		# Dans notre requête on remplace tous les paramêtres par des %s
@@ -133,12 +296,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 		
 		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
 		mycursor.execute(requete, parametres)
+		mydb.commit()
 		mycursor.close()
 	
 	def ModifHabilete(self):
 		mycursor = mydb.cursor()
 		habilete = self.plainTextEditHabilete.toPlainText()
-		
+		self.Habilete.setText(str(habilete))
 		mycursor = mydb.cursor()
 
 		# Dans notre requête on remplace tous les paramêtres par des %s
@@ -148,6 +312,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 		
 		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
 		mycursor.execute(requete, parametres)
+		mydb.commit()
 		mycursor.close()
 
 app = QApplication(sys.argv)
