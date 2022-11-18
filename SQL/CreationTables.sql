@@ -1,23 +1,34 @@
-CREATE DATABASE IF NOT EXISTS merlive;
-
 CREATE TABLE IF NOT EXISTS discipline_kai(
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	nom VARCHAR(255),
-	notes VARCHAR(255)
+	nom VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS arme(
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	nom VARCHAR(255),
-	notes VARCHAR(255)
+	nom VARCHAR(255)
 );
 
-CREATE TABLE IF NOT EXISTS sac_dos(
+CREATE TABLE IF NOT EXISTS objet(
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	type_objet ENUM('objet','objet_special','bourse','repas'),
-	nombre_objet INT,
-	nom_objet VARCHAR(255),
-	notes_bas VARCHAR(255)
+	nom VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS lien_discipline_kai(
+id INT PRIMARY KEY AUTO_INCREMENT,
+id_feuille_aventure INT,
+id_discipline_kai INT
+);
+
+CREATE TABLE IF NOT EXISTS lien_arme(
+id INT PRIMARY KEY AUTO_INCREMENT,
+id_feuille_aventure INT,
+id_arme INT
+);
+
+CREATE TABLE IF NOT EXISTS lien_objet(
+id INT PRIMARY KEY AUTO_INCREMENT,
+id_feuille_aventure INT,
+id_objet iNT
 );
 
 CREATE TABLE IF NOT EXISTS feuille_aventure(
@@ -27,9 +38,9 @@ CREATE TABLE IF NOT EXISTS feuille_aventure(
 	endurance INT,
 	habilite VARCHAR(255),
 	id_sac_dos INT,
-	FOREIGN KEY (id_discipline_kai) REFERENCES discipline_kai(id),
-	FOREIGN KEY (id_arme) REFERENCES arme(id),
-	FOREIGN KEY (id_sac_dos) REFERENCES sac_dos(id)
+	FOREIGN KEY (id_discipline_kai) REFERENCES lien_discipline_kai(id_feuille_aventure),
+	FOREIGN KEY (id_arme) REFERENCES lien_arme(id_feuille_aventure),
+	FOREIGN KEY (id_sac_dos) REFERENCES lien_objet(id_feuille_aventure)
 );
 
 CREATE TABLE IF NOT EXISTS chapitre(
