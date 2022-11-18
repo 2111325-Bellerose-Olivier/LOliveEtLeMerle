@@ -18,14 +18,33 @@ from FenetreOliveMerle import Ui_MainWindow
 # de QMainWindow et de notre interface Ui_MainWindow
 class MainWindow(QMainWindow, Ui_MainWindow):
 	
+	def afficher_tout():
+		print("allo")
+	
 	def __init__(self, *args, obj=None, **kwargs):
 		super(MainWindow, self).__init__(*args, **kwargs)
 		# On va créer la fenêtre avec cette commande
 		self.setupUi(self)
 		
-		self.buttonChapitre.clicked.connect(self.GoChapitre)
+		mycursor = mydb.cursor()
+
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete = "SELECT nom  FROM arme"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor.execute(requete)
+
+		# Le curseur récupère toutes les données du résultat de la requête
+		myresult = mycursor.fetchall()
+		texte = str(myresult)
 		
-		self.buttonProchainChapitre.clicked.connect(self.ProchainChapitre)
+		
+		for text in myresult:
+			variable = texte.replace('[', '').replace(']', '').replace('"', '').replace('(', "").replace(')', "").replace("'", "")
+			self.plainTextEditArmes.setPlainText(variable)
+		mycursor.close()
+		
 		
 	def GoChapitre(self):
 		self.plainTextEdit.setPlainText("")
@@ -52,31 +71,47 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 		self.plainTextEdit.setPlainText(variable)
 		mycursor.close()
 		
+		
+	def AjoutArmes(self):
+		nom = self.plainTextEditAjoutArmes.toPlainText()
+		
 		mycursor = mydb.cursor()
+
 		# Dans notre requête on remplace tous les paramêtres par des %s
-		requete2 = "SELECT no_chapitre_destination  FROM lien_chapitre WHERE no_chapitre_origine = %s"
+		requete = "INSERT INTO arme (nom) values (%s)"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres = (str(nom),)
 		
-		parametres2 = (chapitre_actuel,)
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		if mycursor.execute(requete, parametres):
+			print("fonctionne")
 		
-		mycursor.execute(requete2, parametres2)
 		
-		myresult2 = mycursor.fetchall()
+	def AjoutObjet(self):
+		nom = self.plainTextEditAjoutObjet.toPlainText()
 		
-		print(chapitre_actuel)
-		index =0
-		self.ProchainComboBox.setItemText(0, "")
-		self.ProchainComboBox.setItemText(1, "")
-		self.ProchainComboBox.setItemText(2, "")
+		mycursor = mydb.cursor()
+
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete = "INSERT INTO objet (nom_objet) values (%s)"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres = (nom,)
 		
-		for(no_chapitre_destination ) in myresult2:
-			variable = str(no_chapitre_destination).replace('(', '').replace(')', '').replace(',', '')
-			self.ProchainComboBox.setItemText(index, str(variable))
-			index = index + 1
-			print(self.ProchainComboBox.currentText())
-			
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor.execute(requete, parametres)
 		
-	def ProchainChapitre(self):
-		print("3")
+	
+	def FeuilleAventure(self):
+		print("57")
+	
+	def ModifBourse(self):
+		print("58")
+	
+	def ModifEndurance(self):
+		print("59")
+	
+	def ModifHabilete(self):
+		print("60")
 
 app = QApplication(sys.argv)
 
