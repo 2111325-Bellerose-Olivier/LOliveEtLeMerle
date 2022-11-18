@@ -73,6 +73,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 		
 		
 	def AjoutArmes(self):
+		mycursor = mydb.cursor()
 		nom = self.plainTextEditAjoutArmes.toPlainText()
 		
 		mycursor = mydb.cursor()
@@ -85,9 +86,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
 		if mycursor.execute(requete, parametres):
 			print("fonctionne")
-		
+		mycursor.close()
 		
 	def AjoutObjet(self):
+		mycursor = mydb.cursor()
 		nom = self.plainTextEditAjoutObjet.toPlainText()
 		
 		mycursor = mydb.cursor()
@@ -99,19 +101,54 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 		
 		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
 		mycursor.execute(requete, parametres)
-		
+		mycursor.close()
 	
 	def FeuilleAventure(self):
-		print("57")
-	
+	print("60")
 	def ModifBourse(self):
-		print("58")
+		mycursor = mydb.cursor()
+		bourse = self.plainTextEditBourse.toPlainText()
+		
+		mycursor = mydb.cursor()
+
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete = "UPDATE feuille_aventure SET bourse = %s WHERE id = 1;"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres = (bourse,)
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor.execute(requete, parametres)
+		mycursor.close()
 	
 	def ModifEndurance(self):
-		print("59")
+		mycursor = mydb.cursor()
+		endurance = self.plainTextEditEndurance.toPlainText()
+		
+		mycursor = mydb.cursor()
+
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete = "UPDATE feuille_aventure SET endurance = %s WHERE id = 1;"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres = (endurance,)
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor.execute(requete, parametres)
+		mycursor.close()
 	
 	def ModifHabilete(self):
-		print("60")
+		mycursor = mydb.cursor()
+		habilete = self.plainTextEditHabilete.toPlainText()
+		
+		mycursor = mydb.cursor()
+
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete = "UPDATE feuille_aventure SET endurance = %s WHERE id = 1;"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres = (habilete,)
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor.execute(requete, parametres)
+		mycursor.close()
 
 app = QApplication(sys.argv)
 
