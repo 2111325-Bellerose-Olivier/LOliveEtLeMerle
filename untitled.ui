@@ -701,7 +701,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>30</string>
+       <string>0</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton">
@@ -1198,6 +1198,38 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>buttonSauvegarde</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Sauvegarde()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1051</x>
+     <y>40</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1208</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonSuppSauvegarde</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>SupprimerSauvegarde()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1027</x>
+     <y>91</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1199</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <signal>test()</signal>
@@ -1209,5 +1241,7 @@
   <slot>ModifBourse()</slot>
   <slot>ModifEndurance()</slot>
   <slot>ModifHabilete()</slot>
+  <slot>Sauvegarde()</slot>
+  <slot>SupprimerSauvegarde()</slot>
  </slots>
 </ui>

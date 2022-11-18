@@ -314,6 +314,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 		mycursor.execute(requete, parametres)
 		mydb.commit()
 		mycursor.close()
+	def SupprimerSauvegarde(self):
+		print("bye")
+	
+	def Sauvegarde(self):
+		mycursor = mydb.cursor()
+		no_chapitre = self.chapitreNum.value()
+		
+
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete = "INSERT INTO sauvegarde (no_chapitre, feuille_aventure) values (%s, 1)"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres = (int(no_chapitre),)
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor.execute(requete, parametres)
+		mydb.commit()
+		mycursor.close()
 
 app = QApplication(sys.argv)
 
