@@ -3,9 +3,9 @@ USE merlive;
 
 CREATE TABLE IF NOT EXISTS feuille_aventure(
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	endurance INT,
-	habilite VARCHAR(255),
-	bourse INT
+	endurance INT DEFAULT 30,
+	habilite INT DEFAULT 0,
+	bourse INT DEFAULT 50
 );
 
 
@@ -52,7 +52,7 @@ FOREIGN KEY (id_feuille_aventure) REFERENCES feuille_aventure(id)
 CREATE TABLE IF NOT EXISTS chapitre(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	no_chapitre INT,
-	texte VARCHAR(255)
+	texte TEXT
 );
 
 CREATE TABLE IF NOT EXISTS lien_chapitre(
