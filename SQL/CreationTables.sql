@@ -66,7 +66,5 @@ CREATE TABLE IF NOT EXISTS lien_chapitre(
 CREATE TABLE IF NOT EXISTS sauvegarde(
 id INT PRIMARY KEY AUTO_INCREMENT,
 no_chapitre INT,
-feuille_aventure INT,
-FOREIGN KEY (no_chapitre) REFERENCES chapitre(id),
-FOREIGN KEY (feuille_aventure) REFERENCES feuille_aventure(id)
+feuille_aventure INT
 );

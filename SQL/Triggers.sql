@@ -1,0 +1,28 @@
+#USE DATABASE merlive;
+
+DROP TRIGGER IF EXISTS trigger_arme;
+DELIMITER $$
+CREATE TRIGGER trigger_arme
+	BEFORE INSERT
+	ON lien_arme
+	FOR EACH ROW
+	BEGIN 	
+		IF NEW.id_arme IS NULL THEN
+         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='id_arme null';	
+		END IF;
+	END $$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS trigger_objet;
+DELIMITER $$
+CREATE TRIGGER trigger_objet
+	BEFORE INSERT
+	ON lien_objet
+	FOR EACH ROW
+	BEGIN 	
+		IF NEW.id_objet IS NULL THEN
+         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='id_objet null';	
+		END IF;
+	END $$
+DELIMITER ;
+	
