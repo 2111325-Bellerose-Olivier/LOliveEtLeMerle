@@ -319,6 +319,8 @@ class Ui_MainWindow(object):
         self.pushButton_3.clicked.connect(MainWindow.ModifBourse) # type: ignore
         self.pushButton_2.clicked.connect(MainWindow.ModifEndurance) # type: ignore
         self.pushButton.clicked.connect(MainWindow.ModifHabilete) # type: ignore
+        self.buttonSauvegarde.clicked.connect(MainWindow.Sauvegarde) # type: ignore
+        self.buttonSuppSauvegarde.clicked.connect(MainWindow.SupprimerSauvegarde) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -371,7 +373,7 @@ class Ui_MainWindow(object):
         self.Bourse.setText(_translate("MainWindow", "50"))
         self.pushButton_3.setText(_translate("MainWindow", "changer"))
         self.label_20.setText(_translate("MainWindow", "Habileté"))
-        self.Habilete.setText(_translate("MainWindow", "30"))
+        self.Habilete.setText(_translate("MainWindow", "0"))
         self.pushButton.setText(_translate("MainWindow", "changer"))
         self.label_21.setText(_translate("MainWindow", "Endurance"))
         self.Endurance.setText(_translate("MainWindow", "30"))
