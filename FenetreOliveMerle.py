@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'untitled.ui'
+# Form implementation generated from reading ui file 'FenetreUiOliveMerle.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -68,20 +68,20 @@ class Ui_MainWindow(object):
         self.comboBoxLivre.addItem("")
         self.chapitre_2.setWidget(self.scrollAreaWidgetContents_3)
         self.chapitre_3 = QtWidgets.QScrollArea(self.centralwidget)
-        self.chapitre_3.setGeometry(QtCore.QRect(740, 50, 351, 51))
+        self.chapitre_3.setGeometry(QtCore.QRect(740, 50, 411, 51))
         self.chapitre_3.setWidgetResizable(True)
         self.chapitre_3.setObjectName("chapitre_3")
         self.scrollAreaWidgetContents_4 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 349, 49))
+        self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 409, 49))
         self.scrollAreaWidgetContents_4.setObjectName("scrollAreaWidgetContents_4")
         self.buttonSuppSauvegarde = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
-        self.buttonSuppSauvegarde.setGeometry(QtCore.QRect(260, 10, 75, 23))
+        self.buttonSuppSauvegarde.setGeometry(QtCore.QRect(320, 10, 75, 23))
         self.buttonSuppSauvegarde.setObjectName("buttonSuppSauvegarde")
         self.label_6 = QtWidgets.QLabel(self.scrollAreaWidgetContents_4)
         self.label_6.setGeometry(QtCore.QRect(10, 10, 131, 31))
         self.label_6.setObjectName("label_6")
         self.comboBoxSuppSauvegarde = QtWidgets.QComboBox(self.scrollAreaWidgetContents_4)
-        self.comboBoxSuppSauvegarde.setGeometry(QtCore.QRect(130, 10, 111, 21))
+        self.comboBoxSuppSauvegarde.setGeometry(QtCore.QRect(170, 10, 111, 21))
         self.comboBoxSuppSauvegarde.setObjectName("comboBoxSuppSauvegarde")
         self.chapitre_3.setWidget(self.scrollAreaWidgetContents_4)
         self.plainTextEdit = QtWidgets.QPlainTextEdit(self.centralwidget)
@@ -306,7 +306,7 @@ class Ui_MainWindow(object):
         self.scrollArea_11.setWidget(self.scrollAreaWidgetContents_16)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1207, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1207, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
 

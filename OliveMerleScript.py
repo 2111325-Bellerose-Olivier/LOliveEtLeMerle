@@ -43,7 +43,21 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 		for text in myresult:
 			variable = texte.replace('[', '').replace(']', '').replace('"', '').replace('(', "").replace(')', "").replace("'", "")
 			self.plainTextEditArmes.setPlainText(variable)
-		mycursor.close()
+		
+		
+		requete = "SELECT id  FROM sauvegarde WHERE  feuille_aventure = 1"
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor.execute(requete,)
+
+		# Le curseur récupère toutes les données du résultat de la requête
+		myresult = mycursor.fetchall()
+		id = str(myresult)
+		
+		
+		for (id) in myresult:
+			#variable1 = id.replace('[', '').replace(']', '').replace('"', '').replace('(', "").replace(')', "").replace("'", "").replace(",", "")
+			self.comboBoxSuppSauvegarde.addItem(str(id).replace('(', "").replace(')', "").replace(",", ""))
 		
 		
 	def GoChapitre(self):
@@ -315,7 +329,24 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 		mydb.commit()
 		mycursor.close()
 	def SupprimerSauvegarde(self):
-		print("bye")
+		mycursor = mydb.cursor()
+		variable = self.comboBoxSuppSauvegarde.currentText()
+		
+		
+		# Dans notre requête on remplace tous les paramêtres par des %s
+		requete2 = "DELETE FROM sauvegarde WHERE id = %s"
+		# Ensuite on crée un tuple avec les valeurs des paramêtres
+		parametres2 = (int(variable),)
+		
+		value = str(variable).replace('(', "").replace(')', "").replace(",", "")
+		
+		self.comboBoxSuppSauvegarde.removeItem(int(value))
+		
+		# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+		mycursor.execute(requete2, parametres2)
+		mydb.commit()
+		
+		mycursor.close()
 	
 	def Sauvegarde(self):
 		mycursor = mydb.cursor()
